@@ -17,6 +17,13 @@ function Bag(){
             })(this),
         ));
 
+        this.removeItem = function(item){
+            console.log(item, this);
+            this.splice(this.indexOf(item), 1);
+
+            return this;
+        }
+
         // allows us to chain methods
         return this;
     };
