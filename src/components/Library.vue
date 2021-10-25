@@ -35,4 +35,9 @@ h1 {
   font-weight: bold;
 }
 
+.card {
+  background-color: darkgrey;
+  border-style: none;
+}
+
 </style>

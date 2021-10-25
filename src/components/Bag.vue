@@ -1,10 +1,10 @@
 <template>
-  <div class="container mt-5 mb-5">
+  <div class="container mb-5">
     <h1>Bag</h1>
     <div >
       <library-item v-for="(item, i) in bag" :item="item" :key="i"></library-item>
     </div>
-    <button class="mt-5">Check out</button>
+    <button class="btn btn-primary mt-1">Check out</button>
   </div>
 </template>
 
@@ -26,5 +26,7 @@ export default {
 </script>
 
 <style scoped>
-
+h1 {
+  margin-top: 10px
+}
 </style>
