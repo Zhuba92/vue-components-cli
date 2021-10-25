@@ -4,7 +4,7 @@
     <div >
       <library-item v-for="(item, i) in bag" :item="item" :key="i"></library-item>
     </div>
-    <button class="btn btn-primary mt-1">Check out</button>
+    <button class="btn btn-primary mt-1" @click="bag.checkOutBag">Check out</button>
   </div>
 </template>
 

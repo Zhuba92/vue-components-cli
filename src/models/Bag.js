@@ -24,6 +24,10 @@ function Bag(){
             return this;
         }
 
+        this.checkOutBag = function(){
+            return this;
+        }
+
         // allows us to chain methods
         return this;
     };
