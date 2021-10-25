@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="row">
-      <bag :bag="library.bag"></bag>
+      <bag :bag="library.bag" @check-out-bag="checkOutBag"></bag>
       <Library :library="library"></Library>
     </div>
   </div>
@@ -29,10 +29,22 @@ export default {
     }
   },
 
+  methods: {
+    checkOutBag() {
+      this.library.bag.forEach(
+        b => {
+          if (this.library.some(i => i.id === b.id)) {
+            this.library.find(i => i.id === b.id).checkOut();
+          }
+        })
+      this.library.bag.length = 0;
+      }
+  },
+
   components: {
     Library,
     Bag
-  }
+  },
 
 }
 </script>
