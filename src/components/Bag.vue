@@ -2,11 +2,9 @@
   <div class="container mt-5 mb-5">
     <h1>Bag</h1>
     <div >
-      <library-item v-for="(item, i) in bag" :item="item" :key="i">
-        <p>{{item.title}}</p>
-      </library-item>
+      <library-item v-for="(item, i) in bag" :item="item" :key="i"></library-item>
     </div>
-    <button>Check out</button>
+    <button class="mt-5">Check out</button>
   </div>
 </template>
 

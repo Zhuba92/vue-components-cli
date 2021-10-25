@@ -1,7 +1,8 @@
 import {LibraryItem} from "./LibraryItems";
 
 function Bag(){
-    this.__proto__ = []; // as of ES6 (2015)
+    this.__proto__ = [];
+    this.length = 0;// as of ES6 (2015)
 
     this.addToBag = function(item){
         this.push(new LibraryItem(
