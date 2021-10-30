@@ -47,4 +47,14 @@ function Album(title, artist, trackCount){
     this.id = Math.floor(Math.random() * 10e16);
 }
 
-export {LibraryItem, Book, Movie, Album}
+function Music (artistName, trackName, artworkUrl, collectionName, kind) {
+    this.artistName = artistName;
+    this.trackName = trackName;
+    this.artworkUrl = artworkUrl;
+    this.collectionName = collectionName;
+    this.kind = kind;
+}
+
+
+
+export {LibraryItem, Book, Movie, Album, Music}
