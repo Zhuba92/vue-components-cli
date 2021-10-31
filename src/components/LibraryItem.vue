@@ -21,12 +21,14 @@
 import Book from '../components/Book';
 import Movie from "./Movie";
 import Album from "./Album";
+import {Music} from "@/models/LibraryItems";
 export default {
   name: "LibraryItem",
   components: {
     Book,
     Movie,
-    Album
+    Album,
+    Music
   },
   props: {
     item: Object

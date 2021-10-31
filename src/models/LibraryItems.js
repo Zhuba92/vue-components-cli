@@ -56,5 +56,4 @@ function Music (artistName, trackName, artworkUrl, collectionName, kind) {
 }
 
 
-
 export {LibraryItem, Book, Movie, Album, Music}

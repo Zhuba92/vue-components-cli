@@ -16,7 +16,7 @@ import LibraryCollection from "@/models/Library";
 //import {Album, Book, Movie} from "@/models/LibraryItems";
 import Bag from "@/components/Bag";
 import axios from "axios";
-//import MediaFactory from "@/models/MediaFactory";
+import MediaFactory from "@/models/MediaFactory";
 
 export default {
   name: 'App',
@@ -50,7 +50,7 @@ export default {
       },
 
     searchItems() {
-      //var mediaFactory = new MediaFactory();
+      var mediaFactory = new MediaFactory();
 
       if(this.searchTerm){
         this.searchResults = new LibraryCollection();
@@ -60,6 +60,7 @@ export default {
           params:{
             term: this.searchTerm,
             limit: 10,
+            media: 'music'
           },
           // header
         }
@@ -71,11 +72,14 @@ export default {
               //this.searchResults = new LibraryCollection(response.data.items);
               for (let i = 0; i < response.data.results.length; i++)
               {
-                //let item = mediaFactory.create(response.data.results[i]);
-                this.searchResults.addItem(response.data.results[i]);
-                //this.library.addItem(item)
-              }
+                let item = mediaFactory.create(response.data.results[i]);
+                console.log('factory returned: ', item);
 
+                if(item){
+                  this.searchResults.addItem(response.data.results[i]);
+                  this.library.addItem(item)
+                }
+              }
             }
           })
           .catch((error) => {
