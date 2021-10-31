@@ -60,7 +60,7 @@ export default {
           params:{
             term: this.searchTerm,
             limit: 10,
-            media: 'music'
+            media: 'all'
           },
           // header
         }

@@ -32,13 +32,13 @@ function Book(title, pages){
 }
 
 // same as above using class syntax
-class Movie{
-    constructor(title, runningTime){
-        this.runningTime = runningTime;
-        this.title = title || 'Default Title';
-        this.id = Math.floor(Math.random() * 10e16);
-    }
-}
+// class Movie{
+//     constructor(title, runningTime){
+//         this.runningTime = runningTime;
+//         this.title = title || 'Default Title';
+//         this.id = Math.floor(Math.random() * 10e16);
+//     }
+// }
 
 function Album(title, artist, trackCount){
     this.title = title;
@@ -47,13 +47,43 @@ function Album(title, artist, trackCount){
     this.id = Math.floor(Math.random() * 10e16);
 }
 
-function Music (artistName, trackName, artworkUrl, collectionName, kind) {
+function Music (artistName, trackName, artworkUrl100, collectionName, kind) {
     this.artistName = artistName;
     this.trackName = trackName;
-    this.artworkUrl = artworkUrl;
+    this.artworkUrl100 = artworkUrl100;
+    this.collectionName = collectionName;
+    this.kind = kind;
+}
+
+function Movie (artistName, trackName, artworkUrl130, kind) {
+    this.artistName = artistName;
+    this.trackName = trackName;
+    this.artworkUrl130 = artworkUrl130;
+    this.kind = kind;
+}
+
+function Podcast (artistName, trackName, feedUrl, artworkUrl130, kind) {
+    this.artistName = artistName;
+    this.trackName = trackName;
+    this.feedUrl = feedUrl;
+    this.artworkUrl130 = artworkUrl130;
+    this.kind = kind;
+}
+
+function Audiobook (wrapperType, artistName, collectionName, kind) {
+    this.wrapperType = wrapperType;
+    this.artistName = artistName;
+    this.collectionName = collectionName;
+    this.kind = kind
+}
+
+function All (artistName, trackName, artworkUrl100, collectionName, kind) {
+    this.artistName = artistName;
+    this.trackName = trackName;
+    this.artworkUrl100 = artworkUrl100;
     this.collectionName = collectionName;
     this.kind = kind;
 }
 
 
-export {LibraryItem, Book, Movie, Album, Music}
+export {LibraryItem, Book, Movie, Album, Music, Podcast, Audiobook, All}
