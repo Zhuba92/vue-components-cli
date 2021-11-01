@@ -2,7 +2,7 @@
   <div id="app">
     <div class="row">
       <div class="container flex">
-        <b-form-input v-on:keyup.enter="searchItems()" type="text" placeholder="Search" v-model="searchTerm"></b-form-input>
+        <b-form-input class="mt-2 mb-2 mr-5 ml-5" v-on:keyup.enter="searchItems()" type="text" placeholder="Search" v-model="searchTerm"></b-form-input>
       </div>
       <bag :bag="library.bag" @check-out-bag="checkOutBag"></bag>
       <Library :library="library"></Library>
@@ -50,6 +50,7 @@ export default {
       },
 
     searchItems() {
+      this.library.length = 0;
       var mediaFactory = new MediaFactory();
 
       if(this.searchTerm){
@@ -60,7 +61,7 @@ export default {
           params:{
             term: this.searchTerm,
             limit: 10,
-            media: 'all'
+            media: ''
           },
           // header
         }

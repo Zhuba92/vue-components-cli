@@ -31,15 +31,6 @@ function Book(title, pages){
     this.id = Math.floor(Math.random() * 10e16);
 }
 
-// same as above using class syntax
-// class Movie{
-//     constructor(title, runningTime){
-//         this.runningTime = runningTime;
-//         this.title = title || 'Default Title';
-//         this.id = Math.floor(Math.random() * 10e16);
-//     }
-// }
-
 function Album(title, artist, trackCount){
     this.title = title;
     this.artist = artist;

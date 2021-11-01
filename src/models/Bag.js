@@ -24,6 +24,12 @@ function Bag(){
             return this;
         }
 
+        this.checkedOutItems = function(){
+            return this.filter(function(item){
+                return !item.isAvailable();
+            })
+        }
+
         // allows us to chain methods
         return this;
     };
